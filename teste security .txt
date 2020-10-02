@@ -1,0 +1,16 @@
+protected void configure(HttpSecurity http) throws Exception {
+	    http.authorizeRequests()
+	    //.antMatchers("/").hasRole("USER")
+	    .antMatchers("/").permitAll()
+	    .anyRequest().authenticated().and()
+		.csrf().disable()
+		.formLogin()
+		    //.loginPage("/login")
+		    .permitAll()
+		    .and()
+		.exceptionHandling()
+		    .accessDeniedPage("/acessoNegado")
+		    .and()
+		.logout()
+		    .permitAll();
+		}
