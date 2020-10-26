@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import br.com.infnet.appagendamento.model.negocio.Membro;
 
-@FeignClient(url = "http://app-agendamentos-api.herokuapp.com/membro", name = "membroClient")
+@FeignClient(url = "http://app-agendamentos-api.herokuapp.com/api/membro", name = "membroClient")
 public interface IMembroClient {
 
 	@GetMapping(value = "/membros")
